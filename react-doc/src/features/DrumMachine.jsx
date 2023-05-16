@@ -80,96 +80,96 @@ function DrumMachine(){
   const zelda = [
     {
       key: 'Q',
-      id: 'majora',
-      url: 'skull_kid.mp3'
+      id: 'Heater-1',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
     },
     {
       key: 'W',
-      id: 'nes_secrect',
-      url: 'nes_secret.mp3'
+      id: 'Heater-2',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
     },
     {
       key: 'E',
-      id: 'hyrule_field',
-      url: 'hyrule_field.mp3'
+      id: 'Heater-3',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
     },
     {
       key: 'A',
-      id: 'zelda_nes',
-      url: 'zelda_nes.mp3'
+      id: 'Heater-4',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
     },
     {
       key: 'S',
-      id: 'zelda_cofre',
-      url: 'zelda_cofre.mp3'
+      id: 'Clap',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
     },
     {
       key: 'D',
-      id: 'fairy_flying',
-      url: 'fairy_flying.mp3'
+      id: 'Open-HH',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
     },
     {
       key: 'Z',
-      id: 'navi_hey',
-      url: 'navi_hey.mp3'
+      id: "Kick-n'-Hat",
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
     },
     {
       key: 'X',
-      id: 'navi_listen',
-      url: 'navi_listen.mp3'
+      id: 'Kick',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
     },
     {
       key: 'C',
-      id: 'objeto_obtenido',
-      url: 'objeto_obtenido.mp3'
+      id: 'Closed-HH',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
     }
   ];
 
   const mario = [
     {
       key: 'Q',
-      id: 'bros_1up',
-      url: 'bros_1up.mp3'
+      id: 'Chord-1',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3'
     },
     {
       key: 'W',
-      id: 'mario_gameover',
-      url: 'mario_gameover.mp3'
+      id: 'Chord-2',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3'
     },
     {
       key: 'E',
-      id: 'wii_fanfare',
-      url: 'wii_fanfare.mp3'
+      id: 'Chord-3',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3'
     },
     {
       key: 'A',
-      id: 'power_down',
-      url: 'power_down.mp3'
+      id: 'Shaker',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3'
     },
     {
       key: 'S',
-      id: 'yoshis_island',
-      url: 'yoshis_island.mp3'
+      id: 'Open-HH',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3'
     },
     {
       key: 'D',
-      id: 'game_over',
-      url: 'game_over.mp3'
+      id: 'Closed-HH',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3'
     },
     {
       key: 'Z',
-      id: 'moneda',
-      url: 'moneda.mp3'
+      id: 'Punchy-Kick',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3'
     },
     {
       key: 'X',
-      id: 'nuevo_nivel',
-      url: 'nuevo_nivel.mp3'
+      id: 'Side-Stick',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3'
     },
     {
       key: 'C',
-      id: '3_pausa',
-      url: '3_pausa.mp3'
+      id: 'Snare',
+      url: 'https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3'
     }
   ];
 
