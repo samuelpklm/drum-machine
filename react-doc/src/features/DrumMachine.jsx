@@ -184,7 +184,7 @@ function DrumMachine(){
     );
 }
 
-function Dboton({ src, play, id, name, vol, power}){
+function Dboton({src, play, id, name, vol, power}){
 
   useEffect(() => {
     document.addEventListener('keydown', logKey);
@@ -192,32 +192,9 @@ function Dboton({ src, play, id, name, vol, power}){
 
  function logKey(e) {
    switch (e.key) {
-    case 'q':
-      play('q', 'Heater-1');
-      break;
-    case 'w':
-      play('w', 'Heater-2');
-      break;
-    case 'e':
-      play('e', 'Heater-3');
-      break;
-    case 'a':
-      play('a', 'Heater-4');
-      break;
-    case 's':
-      play('s', 'Clap');
-      break;
-    case 'd':
-      play('d', 'Open-HH');
-      break;
-    case 'z':
-      play('z', 'Kick-n-Hat');
-      break;
-    case 'x':
-      play('x', 'Kick');
-      break;
-    case 'c':
-      play('c', 'Closed-HH');
+    case name:
+      console.log('Hola');
+      play(name, id);
       break;
    }
  
