@@ -10,55 +10,15 @@ function DrumMachine(){
   const [nombreMusic, setNombreMusic] = useState('');
   const [volumen, setVolumen] = useState(1);
 
-    useEffect(() => {
-      document.addEventListener('keydown', logKey);
-    }, []);
-
-  // const input = document.querySelector("button");
-  // input.addEventListener("keydown", logKey);
-
-   function logKey(e) {
    
-     
-     switch (e.key) {
-      case 'q':
-        play(music[posicionBank][0].id);
-        break;
-      case 'w':
-        play(music[posicionBank][1].id);
-        break;
-      case 'e':
-        play(music[posicionBank][2].id);
-        break;
-      case 'a':
-        play(music[posicionBank][3].id);
-        break;
-      case 's':
-        play(music[posicionBank][4].id);
-        break;
-      case 'd':
-        play(music[posicionBank][5].id);
-        break;
-      case 'z':
-        play(music[posicionBank][6].id);
-        break;
-      case 'x':
-        play(music[posicionBank][7].id);
-        break;
-      case 'c':
-        play(music[posicionBank][8].id);
-        break;
-     }
-   
-  }
 
-  const play = (id) => {
+  const play = (id, name) => {
    
       const audio = document.getElementById(id);
       audio.currentTime = 0;
       audio.volume = volumen;
       audio.play();
-      setNombreMusic(id);
+      setNombreMusic(name);
   }
 
   const ajustarVolumen = (e) => {
@@ -79,47 +39,47 @@ function DrumMachine(){
 
   const zelda = [
     {
-      key: 'Q',
+      key: 'q',
       id: 'Heater-1',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
     },
     {
-      key: 'W',
+      key: 'w',
       id: 'Heater-2',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3'
     },
     {
-      key: 'E',
+      key: 'e',
       id: 'Heater-3',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3'
     },
     {
-      key: 'A',
+      key: 'a',
       id: 'Heater-4',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3'
     },
     {
-      key: 'S',
+      key: 's',
       id: 'Clap',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3'
     },
     {
-      key: 'D',
+      key: 'd',
       id: 'Open-HH',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3'
     },
     {
-      key: 'Z',
+      key: 'z',
       id: "Kick-n'-Hat",
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3'
     },
     {
-      key: 'X',
+      key: 'x',
       id: 'Kick',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3'
     },
     {
-      key: 'C',
+      key: 'c',
       id: 'Closed-HH',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
     }
@@ -127,47 +87,47 @@ function DrumMachine(){
 
   const mario = [
     {
-      key: 'Q',
+      key: 'q',
       id: 'Chord-1',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3'
     },
     {
-      key: 'W',
+      key: 'w',
       id: 'Chord-2',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_2.mp3'
     },
     {
-      key: 'E',
+      key: 'e',
       id: 'Chord-3',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Chord_3.mp3'
     },
     {
-      key: 'A',
+      key: 'a',
       id: 'Shaker',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Give_us_a_light.mp3'
     },
     {
-      key: 'S',
+      key: 's',
       id: 'Open-HH',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Dry_Ohh.mp3'
     },
     {
-      key: 'D',
+      key: 'd',
       id: 'Closed-HH',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3'
     },
     {
-      key: 'Z',
+      key: 'z',
       id: 'Punchy-Kick',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/punchy_kick_1.mp3'
     },
     {
-      key: 'X',
+      key: 'x',
       id: 'Side-Stick',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3'
     },
     {
-      key: 'C',
+      key: 'c',
       id: 'Snare',
       url: 'https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3'
     }
@@ -183,7 +143,7 @@ function DrumMachine(){
         </div>
         <div className='control-boton'>
           <div className='fila-boton' >
-          
+
             <Dboton power={posicionPower} src={music[posicionBank][0].url} id={music[posicionBank][0].id} play={play} name={music[posicionBank][0].key}/>
             <Dboton power={posicionPower} src={music[posicionBank][1].url} id={music[posicionBank][1].id} play={play} name={music[posicionBank][1].key}/>
             <Dboton power={posicionPower} src={music[posicionBank][2].url} id={music[posicionBank][2].id} play={play} name={music[posicionBank][2].key}/>
@@ -215,10 +175,47 @@ function DrumMachine(){
 }
 
 function Dboton({ src, play, id, name, key, power}){
+
+  useEffect(() => {
+    document.addEventListener('keydown', logKey);
+  }, []);
+
+ function logKey(e) {
+   switch (e.key) {
+    case 'q':
+      play('q', id);
+      break;
+    case 'w':
+      play('w', id);
+      break;
+    case 'e':
+      play('e', id);
+      break;
+    case 'a':
+      play('a', id);
+      break;
+    case 's':
+      play('s', id);
+      break;
+    case 'd':
+      play('d', id);
+      break;
+    case 'z':
+      play('z', id);
+      break;
+    case 'x':
+      play('x', id);
+      break;
+    case 'c':
+      play('c', id);
+      break;
+   }
+ 
+}
   
   return (
-    <button onClick={() => play(id)} className='button-personalizado boton'>
-      <audio src={power ? src : '#'} id={id}/>
+    <button onClick={() => play(name, id)} className='button-personalizado boton'>
+      <audio src={power ? src : '#'} id={name}/>
      {name}
     </button>
     
