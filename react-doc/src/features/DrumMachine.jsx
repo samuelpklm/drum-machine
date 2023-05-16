@@ -16,6 +16,7 @@ function DrumMachine(){
    
       const audio = document.getElementById(id);
       audio.currentTime = 0;
+     
       audio.play();
       setNombreMusic(name);
   }
@@ -192,31 +193,31 @@ function Dboton({ src, play, id, name, vol, power}){
  function logKey(e) {
    switch (e.key) {
     case 'q':
-      play('q', id);
+      play('q', 'Heater-1');
       break;
     case 'w':
-      play('w', id);
+      play('w', 'Heater-2');
       break;
     case 'e':
-      play('e', id);
+      play('e', 'Heater-3');
       break;
     case 'a':
-      play('a', id);
+      play('a', 'Heater-4');
       break;
     case 's':
-      play('s', id);
+      play('s', 'Clap');
       break;
     case 'd':
-      play('d', id);
+      play('d', 'Open-HH');
       break;
     case 'z':
-      play('z', id);
+      play('z', 'Kick-n-Hat');
       break;
     case 'x':
-      play('x', id);
+      play('x', 'Kick');
       break;
     case 'c':
-      play('c', id);
+      play('c', 'Closed-HH');
       break;
    }
  
@@ -236,7 +237,7 @@ function Power({ estado, presionar, nombre }){
     <div>
     <span className='nombre'>{nombre}</span>
       <div className='power'>
-        <button onClick={presionar} className='power-boton' style={{float: estado}}></button>
+        <button onClick={presionar}  className='power-boton' style={{float: estado}}></button>
       </div>
     </div>
   );
