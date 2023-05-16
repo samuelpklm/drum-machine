@@ -16,13 +16,21 @@ function DrumMachine(){
    
       const audio = document.getElementById(id);
       audio.currentTime = 0;
-      audio.volume = volumen;
       audio.play();
       setNombreMusic(name);
   }
 
   const ajustarVolumen = (e) => {
     setVolumen(e.target.value);
+  }
+
+  const setKeyVolume = () => {
+    const audioes = zelda.map(sound => document.getElementById(sound.key));
+    audioes.forEach(audio => {
+      if(audio) {
+        audio.volume = volumen;
+      }
+    }) 
   }
 
   const botonPower = () => {
@@ -137,6 +145,7 @@ function DrumMachine(){
 
     return (
       <div className="card" >
+        {setKeyVolume()}
         <div className='logo'>
           <div class="inner-logo ">FCC&nbsp;</div>
           <FaFreeCodeCamp style={{height: '100%', width: '100%'}}/>
@@ -174,7 +183,7 @@ function DrumMachine(){
     );
 }
 
-function Dboton({ src, play, id, name, key, power}){
+function Dboton({ src, play, id, name, vol, power}){
 
   useEffect(() => {
     document.addEventListener('keydown', logKey);
